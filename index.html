@@ -1,0 +1,2681 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>AdviseMe App</title>
+    <meta name="description" content="Get advice on any area of life" />
+	<meta name="keywords" content="advice, advise, me, any, life, friendly, witty, should, app, mobile, adviseme" />
+	<meta name="author" content="Ephphatha (efatha) Consulting" />
+	<link rel="shortcut icon" href="favicon.ico">
+   	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+   	<script type="text/javascript" src="https://code.jquery.com/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+</head> 
+<body oncontextmenu="return false">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div data-role="page" id="index">
+	<div data-role="header" data-theme="c" data-backbtn="false" data-position="fixed">
+    <h1><img src="lips.png" width="100" height="50" /></h1>
+      <div data-role="navbar" class="ui-bar-e" data-iconpos="left">
+       <ul><li><a href="#" id="clearpage" data-icon="delete" class="ui-btn-active ui-state-persist" data-transition="flip">Clear Page</a></li>
+	   <li><a href="#about" data-icon="info" data-transition="flip">About AdviseMe</a></li></ul>
+      </div><!-- navbar -->
+	</div><!-- /header -->
+
+	<div data-role="content">	
+       <div data-role="fieldcontain" >
+        <label for="textinput" >Ask Advice: <font size="-1">(e.g. Should I marry Ade or Dan)</font></label>
+      <input type="text" name="textinput" id="textinput" value="should " />
+    </div> <!-- fieldcontain -->
+    <button class="ui-btn-active" data-theme="b" id="adviseme">Advise Me</button>
+    <label id='notadvice'></label>
+    <div align="center"><img src="oops.png" alt="Oops" name="imgoops" width="70" height="70" id="imgoops" hidden="true" /></div>
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" id="subcheck" hidden="hidden">
+        <legend></legend>
+	<input type="checkbox" name="subcheckbox" id="subcheckbox_0" disabled class="custom" value="" />
+        <label for="subcheckbox_0"><span id="ss0"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_1" disabled class="custom" value="" />
+		<label for="subcheckbox_1"><span id="ss1"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_2" disabled class="custom" value="" />
+        <label for="subcheckbox_2"><span id="ss2"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_3"disabled class="custom" value="" />
+        <label for="subcheckbox_3"><span id="ss3"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_4" disabled class="custom" value="" />
+        <label for="subcheckbox_4"><span id="ss4"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_5" disabled class="custom" value="" />
+        <label for="subcheckbox_5"><span id="ss5"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_6" disabled class="custom" value="" />
+        <label for="subcheckbox_6"><span id="ss6"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_7" disabled class="custom" value="" />
+        <label for="subcheckbox_7"><span id="ss7"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_8" disabled class="custom" value="" />
+        <label for="subcheckbox_8"><span id="ss8"></span></label>
+    <input type="checkbox" name="subcheckbox" id="subcheckbox_9" disabled class="custom" value="" />
+        <label for="subcheckbox_9"><span id="ss9"></span></label>
+      </fieldset>
+    </div> <!-- fieldcontain -->
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" id="objcheck" hidden="hidden">
+        <legend></legend>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_0" disabled class="custom" value="" />
+        <label for="objcheckbox_0"><span id="so0"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_1" disabled class="custom" value="" />
+        <label for="objcheckbox_1"><span id="so1"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_2" disabled class="custom" value="" />
+        <label for="objcheckbox_2"><span id="so2"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_3" disabled class="custom" value="" />
+        <label for="objcheckbox_3"><span id="so3"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_4" disabled class="custom" value="" />
+        <label for="objcheckbox_4"><span id="so4"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_5"disabled class="custom" value="" />
+        <label for="objcheckbox_5"><span id="so5"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_6" disabled class="custom" value="" />
+        <label for="objcheckbox_6"><span id="so6"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_7" disabled class="custom" value="" />
+        <label for="objcheckbox_7"><span id="so7"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_8" disabled class="custom" value="" />
+        <label for="objcheckbox_8"><span id="so8"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox_9" disabled class="custom" value="" />
+        <label for="objcheckbox_9"><span id="so9"></span></label>
+      </fieldset>
+    </div> <!-- fieldcontain -->
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" id="objcheck2" hidden="hidden">
+        <legend></legend>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_0" disabled class="custom" value="" />
+        <label for="objcheckbox2_0"><span id="so20"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_1" disabled class="custom" value="" />
+        <label for="objcheckbox2_1"><span id="so21"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_2" disabled class="custom" value="" />
+        <label for="objcheckbox2_2"><span id="so22"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_3" disabled class="custom" value="" />
+        <label for="objcheckbox2_3"><span id="so23"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_4" disabled class="custom" value="" />
+        <label for="objcheckbox2_4"><span id="so24"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_5" disabled class="custom" value="" />
+        <label for="objcheckbox2_5"><span id="so25"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_6" disabled class="custom" value="" />
+        <label for="objcheckbox2_6"><span id="so26"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_7" disabled class="custom" value="" />
+        <label for="objcheckbox2_7"><span id="so27"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_8" disabled class="custom" value="" />
+        <label for="objcheckbox2_8"><span id="so28"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox2_9" disabled class="custom" value="" />
+        <label for="objcheckbox2_9"><span id="so29"></span></label>
+      </fieldset>
+    </div> <!-- fieldcontain -->
+    <div data-role="fieldcontain">
+      <fieldset data-role="controlgroup" id="objcheck3" hidden="hidden">
+        <legend></legend>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_0" disabled class="custom" value="" />
+        <label for="objcheckbox3_0"><span id="so30"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_1" disabled class="custom" value="" />
+        <label for="objcheckbox3_1"><span id="so31"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_2" disabled class="custom" value="" />
+        <label for="objcheckbox3_2"><span id="so32"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_3" disabled class="custom" value="" />
+        <label for="objcheckbox3_3"><span id="so33"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_4" disabled class="custom" value="" />
+        <label for="objcheckbox3_4"><span id="so34"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_5" disabled class="custom" value="" />
+        <label for="objcheckbox3_5"><span id="so35"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_6" disabled class="custom" value="" />
+        <label for="objcheckbox3_6"><span id="so36"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_7" disabled class="custom" value="" />
+        <label for="objcheckbox3_7"><span id="so37"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_8" disabled class="custom" value="" />
+        <label for="objcheckbox3_8"><span id="so38"></span></label>
+    <input type="checkbox" name="objcheckbox" id="objcheckbox3_9" disabled class="custom" value="" />
+        <label for="objcheckbox3_9"><span id="so39"></span></label>
+      </fieldset>
+    </div> <!-- fieldcontain -->
+
+    <button class="ui-btn-active" id="getadvice" data-theme="b">Get Advice</button>
+    <div data-role="fieldcontain" align="center">
+      <label id="says">AdviseMe says:</label><br />
+      <input type="range" name="slider" disabled data-theme="a" data-track-theme="b" id="slider" value="0" min="0" max="100" />
+    </div> <!-- fieldcontain -->
+    <div align="center"><img src="smile.png" alt="Smiley" name="smiley" width="70" height="70" id="smiley" hidden="true"></div>
+        <div class="fb-like" data-href="https://www.facebook.com/advisemeapp" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>
+	</div><!-- /content -->
+
+  <div data-role="footer" data-theme="e">
+    <h4>Friendly &amp; Witty Advice</h4>
+  </div> <!-- footer -->
+</div><!-- /page -->
+
+<!-- About Page -->
+<div data-role="page" id="about">
+  <div data-role="header" data-backbtn="false" data-theme="d">
+    <h1>About AdviseMe</h1>
+    <div data-role="navbar" class="ui-btn-active">
+      <ul><li><a href="#index" data-icon="back" data-transition="flip">Back</a></li></ul>
+    </div> <!-- navbar -->
+  </div> <!-- header -->
+  <div data-role="content">
+  <p align="justify"><b>AdviseMe 1.0</b></p>
+    <p align="justify">AdviseMe is your friendly, witty, yet simple app that gives real-life advice on any area of life. It even does so in amusing ways.</p>
+  <p align="justify">Its advice are based on Mathematics, insight & experiences from many sources and are specific to each user's request. Each user bears sole responsibility for using any advice it gives.</p>
+  <p align="justify">Feel free to send your comments or report bugs below:</p>
+  <div data-role="fieldcontain">
+    <label for="textinput2">Your email:</label>
+    <input type="email" name="textinput2" id="textinput2" value=""  />
+  </div> <!-- fieldcontain -->
+    <div data-role="fieldcontain">
+      <label for="textarea">Comments:</label>
+      <textarea cols="40" rows="3" name="textarea" id="textarea"></textarea>
+      <button class="ui-btn-active" id="sendcmt" data-theme="b">Send</button>
+    </div> <!-- fieldcontain -->
+    <div class="fb-like" data-href="https://www.facebook.com/advisemeapp" data-layout="box_count" data-action="like" data-show-faces="false" data-share="true"></div>
+  </div> <!-- content -->
+  <div data-role="footer" data-theme="e">
+    <h4>Copyright &copy; Ephphatha Consulting &reg;</h4>
+  </div> <!-- footer -->
+</div> <!-- About page -->
+<script type="text/javascript">
+$(document).ready(function(e) {
+	var checkbutton = 0;
+	var not_verb;
+	var obj, obj2, obj3, prep_locate, prepoval;
+	var obj2 = '';
+	var mutflag = false;
+	var prepospecialflag = false;
+	var prepolongflag = false;
+	var or_b4_prep_flag = false;
+	var subjarray = [];
+	var grandall = '';
+	var objarray = [];
+	var subjpointarray = [];
+	var objpointarray = [];
+	var objpointarray2 = [];
+	var objpointarray3 = [];
+	var objarrayspecial = ['right time','right location','right thing','right person','right event','preferred'];
+	
+	var subjpoint;
+	var objpoint;
+	var combpoint;
+	var combpointtemp;
+	var objmutual;
+	var objmutual2;
+	var objmutual3rdflag;
+	var objmutual4thflag;
+	var response;
+	var responsetemp;
+	var response2;
+
+	$('#adviseme').click(function(e) {
+		if ($('#subcheck').is(':visible')){
+			$('#notadvice').append('<b>Sorry, please clear page first.</b>');
+			$('#imgoops').show();
+		}  else {
+			$('#notadvice').html('');
+			$('#imgoops').hide();
+			$('#adviseme').attr('disabled',true);
+			var quest = $('#textinput').val().toLowerCase().trim();
+			var subj, firstword = '';
+			var fwposition, verb;
+			fwposition =  quest.search('should');
+			if (fwposition == 0){
+				firstword = 'should';
+			}
+			if (firstword == 'should'){
+				if (quest.match(/ /g).length > 1){
+				p = quest.search(' ');
+				q = quest.indexOf(' ', ++p);
+				subj = $('#textinput').val().substring(p,q);
+				r = quest.indexOf(' ', ++q);
+				var prepnotvalid = 'false'; 
+				if (r > -1){
+					verb = quest.substring(q,r);
+					if (verb != 'not') {
+						s = quest.indexOf(' ', ++r);
+						if (s > 1){
+							prepo = quest.substring(r, s);
+							if (prepo == 'their' || prepo == 'his' || prepo == 'my' || prepo == 'your' || prepo == 'her' || prepo == 'our' || prepo == 'its' || prepo == 'a' || prepo == 'the' || prepo == 'an'){
+								prepoloop(quest,--s);
+								if(quest.indexOf(' or ',8)>0 && quest.indexOf(' or ',8)<prep_locate){
+									or_b4_prep_flag = true;
+									or_locate = quest.indexOf(' or ',8); //should goes 6 characters
+									obj = $('#textinput').val().substring(r,or_locate);
+									v = quest.length;
+									w = 3 + or_locate; //plus 3 since 'or'.length = 2
+									obj2 = $('#textinput').val().substring(w,prep_locate);
+									obj3 = $('#textinput').val().substring(prep_locate+prepoval.length,v);
+								} else if (prep_locate>0){
+									prepolongflag = true;
+									if (quest.search(' or ') > prep_locate){ //least possible position
+										obj = $('#textinput').val().substring(r,prep_locate);
+										or_locate = quest.indexOf(' or ',s);
+										v = quest.length;
+										w = prepoval.length + prep_locate;
+										obj2 = $('#textinput').val().substring(w,or_locate);
+										obj3 = $('#textinput').val().substring(or_locate+4,v);
+									} else {
+										obj = $('#textinput').val().substring(r,prep_locate);
+										v = quest.length;
+										w = prepoval.length + prep_locate; //plus 2 since 'or'.length = 2
+										obj2 = $('#textinput').val().substring(w,v);
+										obj3 = '';
+									}
+								
+								} else {
+									or_locate = quest.indexOf(' or',8); // should goes 6 characters
+									if (or_locate > 1){
+										obj = $('#textinput').val().substring(r,or_locate);
+										v = quest.length;
+										w = 3 + or_locate; //plus 2 since 'or'.length = 2
+										obj2 = $('#textinput').val().substring(w,v);
+									} else {
+										obj = $('#textinput').val().substring(r,quest.length);
+									}// end if or_locate
+								}
+							} else if (prepo=='for' || prepo=='from' || prepo=='in' || prepo=='about' || prepo=='aboard' || prepo=='above' || prepo=='absent' || prepo=='across' || prepo=='afore' || prepo=='after' || prepo=='against' || prepo=='along' || prepo=='alongside' || prepo=='amid' || prepo=='amidst' || prepo=='among' || prepo=='amongst' || prepo=='around' || prepo=='as' || prepo=='aside' || prepo=='at' || prepo=='atop' || prepo=='before' || prepo=='behind' || prepo=='below' || prepo=='beneath' || prepo=='beside' || prepo=='besides' || prepo=='between' || prepo=='beyond' || prepo=='but' || prepo=='by' || prepo=='concerning' || prepo=='despite' || prepo=='down' || prepo=='during' || prepo=='except' || prepo=='excluding' || prepo=='failing' || prepo=='following' || prepo=='given' || prepo=='including' || prepo=='inside' || prepo=='into' || prepo=='like' || prepo=='minus' || prepo=='near' || prepo=='next' || prepo=='notwithstanding' || prepo=='off' || prepo=='on' || prepo=='onto' || prepo=='opposite' || prepo=='out' || prepo=='outside' || prepo=='over' || prepo=='past' || prepo=='per' || prepo=='plus' || prepo=='pro' || prepo=='regarding' || prepo=='round' || prepo=='save' || prepo=='since' || prepo=='than' || prepo=='through' || prepo=='throughout' || prepo=='till' || prepo=='to' || prepo=='toward' || prepo=='towards' || prepo=='under' || prepo=='underneath' || prepo=='unlike' || prepo=='until' || prepo=='unto' || prepo=='up' || prepo=='upon' || prepo=='versus' || prepo=='via' || prepo=='vice' || prepo=='vis-a-vis' || prepo=='with' || prepo=='within' || prepo=='without' || prepo=='if'){
+								mutflag = true; //since all objects are of mutually exclusive special array
+								prepospecialflag = true;	// allows special array filling due to preposition
+								prepoloop(quest,--s);
+								if(quest.indexOf(' or ',8)>0 && quest.indexOf(' or ',8)<prep_locate){
+									prepolongflag = true; //cos all objects must bear special array cos of preposition
+									or_b4_prep_flag = true;
+									or_locate = quest.indexOf(' or ',8); //should goes 6 characters
+									obj = $('#textinput').val().substring(s+1,or_locate);
+									v = quest.length;
+									w = 3 + or_locate; //plus 3 since 'or'.length = 2
+									obj2 = $('#textinput').val().substring(w,prep_locate);
+									obj3 = $('#textinput').val().substring(prep_locate+prepoval.length,v);
+								} else if (prep_locate>0){
+									prepolongflag = true;
+									if (quest.search(' or ') > s){ //least possible position
+										obj = $('#textinput').val().substring(s+1,prep_locate);
+										or_locate = quest.indexOf(' or ',s);
+										v = quest.length;
+										w = prepoval.length + prep_locate;
+										obj2 = $('#textinput').val().substring(w,or_locate);
+										obj3 = $('#textinput').val().substring(or_locate+4,v);
+									} else {
+										obj = $('#textinput').val().substring(s+1,prep_locate);
+										v = quest.length;
+										w = prepoval.length + prep_locate; //plus 2 since 'or'.length = 2
+										obj2 = $('#textinput').val().substring(w,v);
+										obj3 = '';
+									}
+								} else {
+								t = quest.indexOf(' ',++s);
+								if (t > 1){
+									obj = $('#textinput').val().substring(s,t);
+									u = quest.indexOf(' ',++t);
+									if (u > 1){
+										or_locate = quest.indexOf(' or',8); // should goes 6 characters
+										if (or_locate > 1){
+											obj = $('#textinput').val().substring(s,or_locate);
+											v = quest.length;
+											w = 3 + or_locate; //plus 3 since ' or'.length = 2
+											obj2 = $('#textinput').val().substring(w,v);
+										} else {
+											obj = $('#textinput').val().substring(s,quest.length);
+										}// end if or_locate
+									} else {
+										or_locate = quest.indexOf(' or',8); // should goes 6 characters
+										if (or_locate > 1){
+											$('#notadvice').append('<b>Sorry, your question is incomplete. Please, re-phrase question.</b>');
+											$('#imgoops').show();
+											prepnotvalid = 'true'; // flag to check
+											$('#adviseme').attr('disabled',false);
+										} else {
+											obj = $('#textinput').val().substring(s,quest.length);
+										}// end if or_locate
+									}
+								} else {
+									t = quest.length;
+									obj = $('#textinput').val().substring(s,t);
+								}
+								}
+							} else if(prepo == 'or') {
+								$('#notadvice').append('<b>Sorry, AdviseMe currently does not compare 2 actions. Please, re-phrase question.</b>');
+								$('#imgoops').show();
+								prepnotvalid = 'true'; // flag to check
+								$('#adviseme').attr('disabled',false);
+							} else {
+								prepoloop(quest,--s);
+								if(quest.indexOf(' or ',8)>0 && quest.indexOf(' or ',8)<prep_locate){
+									or_b4_prep_flag = true;
+									or_locate = quest.indexOf(' or ',8); //should goes 6 characters
+									obj = $('#textinput').val().substring(r,or_locate);
+									v = quest.length;
+									w = 3 + or_locate; //plus 3 since 'or'.length = 2
+									obj2 = $('#textinput').val().substring(w,prep_locate);
+									obj3 = $('#textinput').val().substring(prep_locate+prepoval.length,v);
+								} else if (prep_locate>0){
+									prepolongflag = true;
+									if (quest.search(' or ') > prep_locate){ //least possible position
+										obj = $('#textinput').val().substring(r,prep_locate);
+										or_locate = quest.indexOf(' or ',s);
+										v = quest.length;
+										w = prepoval.length + prep_locate;
+										obj2 = $('#textinput').val().substring(w,or_locate);
+										obj3 = $('#textinput').val().substring(or_locate+4,v);
+									} else {
+										obj = $('#textinput').val().substring(r,prep_locate);
+										v = quest.length;
+										w = prepoval.length + prep_locate; //plus 2 since 'or'.length = 2
+										obj2 = $('#textinput').val().substring(w,v);
+										obj3 = '';
+									}
+								} else { // ==
+										obj = prepo;
+										t = quest.indexOf(' ',++s);
+										if (t > 1){
+											or_locate = quest.indexOf(' or',8); //should goes 6 characters
+											if (or_locate > 1){
+													obj = $('#textinput').val().substring(r,or_locate);
+													v = quest.length;
+													w = 3 + or_locate; //plus 3 since 'or'.length = 2
+													obj2 = $('#textinput').val().substring(w,v);
+											} else {
+												obj = $('#textinput').val().substring(r,quest.length);
+											}
+										} else {
+											obj = $('#textinput').val().substring(r,quest.length);
+										} // end if
+								}
+							} //end if prepo
+						} else {
+							t = quest.length;
+							obj = $('#textinput').val().substring(r,t);
+							//if the object happens to be a preposition, complain
+							if (obj == 'for' || obj == 'from' || obj == 'in' || obj == 'about' || obj == 'aboard' || obj == 'above' || obj == 'absent' || obj == 'across' || obj == 'afore' || obj == 'after' || obj == 'against' || obj == 'along' || obj == 'alongside' || obj == 'amid' || obj == 'amidst' || obj == 'among' || obj == 'amongst' || obj == 'around' || obj == 'as' || obj == 'aside' || obj == 'at' || obj == 'atop' || obj == 'before' || obj == 'behind' || obj == 'below' || obj == 'beneath' || obj == 'beside' || obj == 'besides' || obj == 'between' || obj == 'beyond' || obj == 'but' || obj == 'by' || obj == 'concerning' || obj == 'despite' || obj == 'down' || obj == 'during' || obj == 'except' || obj == 'excluding' || obj == 'failing' || obj == 'following' || obj == 'given' || obj == 'including' || obj == 'inside' || obj == 'into' || obj == 'like' || obj == 'minus' || obj == 'near' || obj == 'next' || obj == 'notwithstanding' || obj == 'off' || obj == 'on' || obj == 'onto' || obj == 'opposite' || obj == 'out' || obj == 'outside' || obj == 'over' || obj == 'past' || obj == 'per' || obj == 'plus' || obj == 'pro' || obj == 'regarding' || obj == 'round' || obj == 'save' || obj == 'since' || obj == 'than' || obj == 'through' || obj == 'throughout' || obj == 'till' || obj == 'to' || obj == 'toward' || obj == 'towards' || obj == 'under' || obj == 'underneath' || obj == 'unlike' || obj == 'until' || obj == 'unto' || obj == 'up' || obj == 'upon' || obj == 'versus' || obj == 'via' || obj == 'vice' || obj == 'vis-a-vis' || obj == 'with' || obj == 'within' || obj == 'without' || obj == 'if'){
+								$('#notadvice').append('<b>Sorry, your question ended with a preposition. Please, re-phrase question.</b>');
+								$('#imgoops').show();
+								prepnotvalid = 'true'; // flag to check
+								$('#adviseme').attr('disabled',false);
+							} else if (obj == 'their' || obj == 'my' || obj == 'your' || obj == 'her' || obj == 'our' || obj == 'its' || obj == 'a' || obj == 'the' || obj == 'an'){
+								$('#notadvice').append('<b>Sorry, your question is incomplete. Please, re-phrase question.</b>');
+								$('#imgoops').show();
+								prepnotvalid = 'true'; // flag to check
+								$('#adviseme').attr('disabled',false);
+							} // end if obj
+							
+						}  //end if s
+					}  else {
+					$('#notadvice').append('<b>Sorry, not is in verb position. Please, re-phrase question.</b>');
+					$('#imgoops').show();
+					prepnotvalid = 'true'; // flag to check
+					$('#adviseme').attr('disabled',false);
+					} //end if verb
+					if (prepnotvalid == 'false') {
+					var term = {button:verb};
+					$.ajax({
+						url:'http://adviseme.efathaonline.net/advice.php',
+				 		type:'POST',
+				   	    data:term,
+			 			dataType:'json',
+					 	error:function(jqXHR,text_status,strError){
+							alert("Error: Connection");
+						},
+					 	timeout:60000,
+					 	success:function(data){
+							if(data.length>3){ //minimum of length of 4 come from a success
+								z = 0;
+								for(i in data){
+									grandall = data[i];
+									if(z==0 && grandall != ''){
+										if (grandall != null){
+										subjarray.push(grandall);
+										}
+										z++;
+									} else if(z==1 && grandall != ''){
+										if (grandall != null){
+										subjpointarray.push(grandall);
+										}
+										z++;
+									} else if(z==2 && grandall != ''){
+										if (grandall != null){
+										objarray.push(grandall);
+										}
+										z++;
+									} else if(z==3 && grandall != ''){
+										if (grandall != null){
+										objpointarray.push(grandall);
+										}
+										z = 0;
+									}
+								}
+								$('#subcheck').prepend('Describe <b>'+ subj +'</b> <font size="-2">(as per question - check relevant boxes)</font><br />');
+								var i = 0;
+								while(i<subjarray.length){
+									chbx = '#subcheckbox_'+ i;
+									$(chbx).val(subjpointarray[i]);
+									$(chbx).attr('disabled',false);
+									spanval = '#ss'+ i;
+									$(spanval).append(subjarray[i]);
+									++i;
+								}
+								$('#subcheck').show();
+								checkbutton = i;
+
+								$('#objcheck').prepend('Describe <b>'+ obj +'</b><br />');
+								var j = 0;
+								if (prepospecialflag){
+									mutflag = true;
+									while(j<objarrayspecial.length){
+										chbx = '#objcheckbox_'+ j;
+										//$(chbx).val(objpointarray[j]); values fixed
+										$(chbx).attr('disabled',false);
+										spanval = '#so'+ j;
+										$(spanval).append(objarrayspecial[j]);
+										++j;
+									}
+									objpointarray = [1,1,1,1,1,1];
+								} else {
+									while(j<objarray.length){
+										chbx = '#objcheckbox_'+ j;
+										$(chbx).val(objpointarray[j]);
+										$(chbx).attr('disabled',false);
+										spanval = '#so'+ j;
+										$(spanval).append(objarray[j]);
+										++j;
+									} //end while
+								} //end if
+								$('#objcheck').show();
+								if (obj2 != '') {
+									$('#objcheck2').prepend('Describe <b>'+ obj2 +'</b><br />');
+									var k = 0;
+									if (prepolongflag == true){
+										if (obj3 != ''){
+											$('#objcheck3').prepend('Describe <b>'+ obj3 +'</b><br />');
+											while(k<objarrayspecial.length){
+												chbx = '#objcheckbox2_'+ k;
+												chbx3 = '#objcheckbox3_'+ k;
+												//$(chbx).val(objpointarray[k]); values fixed
+												$(chbx).attr('disabled',false);
+												$(chbx3).attr('disabled',false);
+												spanval = '#so2'+ k;
+												spanval3 = '#so3'+ k;
+												$(spanval).append(objarrayspecial[k]);
+												$(spanval3).append(objarrayspecial[k]);
+												++k;
+											}
+											objpointarray2 = [1,1,1,1,1,1]; //mutual points for arrayspecial
+											objpointarray3 = [1,1,1,1,1,1]; //mutual points for arrayspecial
+											$('#objcheck2').show();
+											$('#objcheck3').show();
+										} else {
+											while(k<objarrayspecial.length){
+												chbx = '#objcheckbox2_'+ k;
+												$(chbx).attr('disabled',false);
+												spanval = '#so2'+ k;
+												$(spanval).append(objarrayspecial[k]);
+												++k;
+											}
+											objpointarray2 = [1,1,1,1,1,1]; //mutual points for arrayspecial
+											$('#objcheck2').show();
+										}
+									} else {
+									if (or_b4_prep_flag && obj3 !=''){
+										$('#objcheck3').prepend('Describe <b>'+ obj3 +'</b><br />');
+										while(k<objarray.length){
+											chbx = '#objcheckbox2_'+ k;
+											$(chbx).val(objpointarray[k]);
+											$(chbx).attr('disabled',false);
+											spanval = '#so2'+ k;
+											$(spanval).append(objarray[k]);
+											++k;
+										} //end while
+										k=0; // re-initialize
+										while(k<objarrayspecial.length){
+											chbx = '#objcheckbox3_'+ k;
+											$(chbx).attr('disabled',false);
+											spanval = '#so3'+ k;
+											$(spanval).append(objarrayspecial[k]);
+											++k;
+										}
+										objpointarray2 = objpointarray.slice(); //copy content
+										objpointarray3 = [1,1,1,1,1,1]; //mutual points for arrayspecial
+										$('#objcheck2').show();
+										$('#objcheck3').show();
+									} else {
+										if (prepospecialflag){
+											while(k<objarrayspecial.length){
+												chbx = '#objcheckbox2_'+ k;
+												//$(chbx).val(objpointarray[k]); values fixed
+												$(chbx).attr('disabled',false);
+												spanval = '#so2'+ k;
+												$(spanval).append(objarrayspecial[k]);
+												++k;
+											}
+											objpointarray2 = [1,1,1,1,1,1]; //mutual points for arrayspecial
+										} else {
+											while(k<objarray.length){
+												chbx = '#objcheckbox2_'+ k;
+												$(chbx).val(objpointarray[k]);
+												$(chbx).attr('disabled',false);
+												spanval = '#so2'+ k;
+												$(spanval).append(objarray[k]);
+												++k;
+											} //end while
+											objpointarray2 = objpointarray.slice(); //copy content
+										} //end if
+										$('#objcheck2').show();
+									}
+									}
+								} //end if
+							} else {
+								$('#notadvice').append('<b>Sorry, verb does not exist, is not supported yet or is misplaced. Please, re-phrase question.</b>');
+								$('#imgoops').show();
+								$('#adviseme').attr('disabled',false);
+							}
+						}
+					});
+				} // end if prepnotvalid
+			} else {	//no object
+				verb = quest.substring(q,quest.length);
+				if (verb != 'not') {
+					var term = {button:verb}; //{button:e};
+					$.ajax({
+						url:'http://adviseme.efathaonline.net/advice.php',
+				 		type:'POST',
+				   	    data:term,
+			 			dataType:'json',
+					 	error:function(jqXHR,text_status,strError){
+							alert("Error: Connection");
+						},
+					 	timeout:60000,
+					 	success:function(data){
+							if(data.length>3){ //minimum of length of 4 come from a success
+								z = 0;
+								for(i in data){
+									grandall = data[i];
+									if(z==0){
+										if (grandall != null){
+										subjarray.push(grandall);
+										}
+										z++;
+									} else if(z==1){
+										if (grandall != null){
+										subjpointarray.push(grandall);
+										}
+										z++;
+									} else if(z==2 && grandall != ''){
+										z++;
+									} else if(z==3 && grandall != ''){
+										z = 0;
+									}
+								}
+								$('#subcheck').prepend('Describe <b>'+ subj +'</b> <font size="-2">(as per question - check relevant boxes)</font><br />');
+								var i = 0;
+								while(i<subjarray.length){
+									chbx = '#subcheckbox_'+ i;
+									$(chbx).val(subjpointarray[i]);
+									$(chbx).attr('disabled',false);
+									spanval = '#ss'+ i;
+									$(spanval).append(subjarray[i]);
+									++i;
+								}
+								$('#subcheck').show();
+								checkbutton = i;
+							} else {
+								$('#notadvice').append('<b>Sorry, verb does not exist, is not supported yet or is misplaced. Please, re-phrase question.</b>');
+								$('#imgoops').show();
+								$('#adviseme').attr('disabled',false);
+							}
+						}
+					});
+				} else {
+					$('#notadvice').append('<b>Sorry, this is a vague question. Please, re-phrase question.</b>');
+					$('#imgoops').show();
+					$('#adviseme').attr('disabled',false);
+				} //end if verb
+			} // end if
+			} else {
+				$('#notadvice').append('<b>Sorry, your question is too short to be clear. Please, re-phrase question.</b>');
+				$('#imgoops').show();
+				$('#adviseme').attr('disabled',false);
+			}
+		} else {
+			$('#notadvice').append('<b>Sorry, this is not a valid Yes/No or 2-choice advice question. Please, re-phrase question.</b>');
+			$('#imgoops').show();
+			$('#adviseme').attr('disabled',false);
+		}
+		}// end if subcheck
+    }); //function
+	
+	$('#getadvice').click(function(e) {
+		subjpoint = 0;
+		objpoint = 0;
+		combpoint = 0;
+		combpointtemp = 0;
+		objmutual = 0;
+		objmutual2 = 0;
+		objmutual3rdflag = 0;
+		objmutual4thflag = 0;
+		response = "";
+		responsetemp = "";
+		response2 = "";
+		countobj3 = 0;
+		if (checkbutton > 0){
+			if (prepolongflag){
+				if(or_b4_prep_flag){
+					subobjobj2();
+					for(i=0; i<objpointarray3.length; ++i){
+						chbx = '#objcheckbox3_'+ i;
+						if ($(chbx).attr('checked')){
+							countobj3 = countobj3 + 1;
+						}
+					}
+					if (countobj3 == 0){
+						response = response + ' '+ obj3 +' unselected';
+					}	
+				} else {
+				if (objpointarray3.length>0){
+				for(i=0; i<subjpointarray.length; ++i){
+					chbx = '#subcheckbox_'+ i;
+					if ($(chbx).attr('checked')){
+						if ($(chbx).val() == 2){
+							response = "Yes";
+							combpoint = combpoint + 1;
+						} else {
+							combpoint = combpoint + 1;
+						}
+					} else {
+						if ($(chbx).val() == 0){
+							response = "No";
+							combpoint = combpoint - 1;
+						} else {
+							combpoint = combpoint - 1;
+						}
+					}
+				}
+				if (!mutflag){	//check for mutually exclusive flag
+					for(i=0; i<objpointarray.length; ++i){
+						chbx = '#objcheckbox_'+ i;
+						if ($(chbx).attr('checked')){
+							if ($(chbx).val() == 2){
+								if (response == "No"){
+									combpoint = combpoint + 1;
+								} else {
+									response = "Yes";
+									combpoint = combpoint + 1;
+								}
+							} else {
+								combpoint = combpoint + 1;
+							}
+						} else {
+							if ($(chbx).val() == 0){
+								response = "No";
+								combpoint = combpoint - 1;
+							} else {
+								combpoint = combpoint - 1;
+							}
+						}
+					}
+				} else {
+					for(i=0; i<objpointarray.length; ++i){
+						chbx = '#objcheckbox_'+ i;
+						if ($(chbx).attr('checked')){
+							combpoint = combpoint + 1;
+							objmutual = objmutual + 1;
+						}
+					}
+				}
+				responsetemp = response;
+				combpointtemp = combpoint;
+				for(i=0; i<objpointarray2.length; ++i){
+					chbx = '#objcheckbox2_'+ i;
+					if ($(chbx).attr('checked')){
+						combpoint = combpoint + 1;
+						objmutual3rdflag = objmutual3rdflag + 1;
+					}
+				}
+				for(i=0; i<objpointarray3.length; ++i){
+					chbx = '#objcheckbox3_'+ i;
+					if ($(chbx).attr('checked')){
+						combpoint = combpointtemp + 1;
+						objmutual4thflag = objmutual4thflag + 1;
+					}
+				}
+				if (objmutual3rdflag>0 || objmutual4thflag>0){
+				if (response == "No" && responsetemp == "No"){
+					response = "No to both";
+					if(combpoint>combpointtemp){
+							$('#slider').val(49) //forced No
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+					} else if(combpoint==combpointtemp) {
+							$('#slider').val(49) //forced No
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+					} else {
+						if (combpoint>0){
+							$('#slider').val(49) //forced No
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (combpoint == 0){
+							$('#slider').val(49) //50% shouldn't be good enough for Yes
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else {
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+							if (temp>24 && temp <50){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else if (temp < 10){
+								$('#slider').val(10) //No certainty should be exactly 0% or close
+								.trigger('change');
+								$('#smiley').attr('src','frown.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','frown.png')
+								.show();
+							} //end if
+						} //end if
+					}
+				} else if (response == "No" && responsetemp == "Yes"){
+					response = "Yes to "+ obj2;
+					combpoint = combpointtemp;
+					if (combpoint>0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length + objpointarray2.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //Least Yes since it's a compulsory Yes
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					}
+				} else if (response == "Yes" && responsetemp == "No"){
+					response = "Yes to "+ obj;
+					if (combpoint>0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //Least Yes since it's a compulsory Yes
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					}
+				} else if (response == "Yes" && responsetemp =="Yes"){
+					if(combpoint>combpointtemp){
+						if (combpoint>0){
+							response = "Yes to "+ obj;
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							response = "Yes to "+ obj;
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					} else if(combpoint==combpointtemp) {
+						if (combpoint>0){
+							response = "Yes to either";
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							response = "Yes to either";
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					} else { //combpoint < combpointtemp
+						if (combpoint>0){
+							combpoint = combpointtemp  //to simplify calculation below
+							response = "Yes to "+ obj2;
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							response = "Yes to "+ obj;
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					}
+				} else if(response == "Yes" || responsetemp =="Yes"){
+					if (combpoint>combpointtemp){
+						response = "Yes to "+ obj;
+						if (combpoint>0){
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					} else {
+						response = "Yes to "+ obj2;
+						combpoint = combpointtemp;
+						if (combpoint>0){
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					}
+				} else if (response == "" && responsetemp =="Yes"){
+						response = "Yes to "+ obj2;
+						combpoint = combpointtemp;
+						if (combpoint>0){
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+				} else if (response == "Yes" && responsetemp ==""){
+					response = "Yes to "+ obj;
+					if (combpoint>0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //least Yes value because of the compulsory Yes
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					} //end if
+				} else if (response == "No" && responsetemp ==""){
+					combpoint = combpointtemp  //to simplify calculation below
+					if (combpoint>0){
+						response = "Yes to "+ obj2;
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else if (combpoint == 0){
+						response = "No to both";
+						$('#slider').val(49) //50% shouldn't be good enough for Yes
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					} else {
+						response = "No to both";
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+						if (temp>24 && temp <50){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (temp < 10){
+							$('#slider').val(10) //No certainty should be exactly 0% or close
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} //end if
+					} //end if
+				} else if (response == "" && responsetemp =="No"){
+					if (combpoint>0){
+						response = "Yes to "+ obj;
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else if (combpoint == 0){
+						response = "No to both";
+						$('#slider').val(49) //50% shouldn't be good enough for Yes
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					} else {
+						response = "No to both";
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+						if (temp>24 && temp <50){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (temp < 10){
+							$('#slider').val(10) //No certainty should be exactly 0% or close
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} //end if
+					} //end if
+				} else {
+						if(combpoint>combpointtemp){
+							if (combpoint>0){
+								response = "Yes to "+ obj;
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+								if (temp>74 && temp <91){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else if (temp > 91){
+									$('#slider').val(90) //No certainty should be exactly 100% or close
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','smile.png')
+									.show();
+								}
+							} else if (combpoint == 0){
+								response = "No to both";
+								$('#slider').val(49) //50% shouldn't be good enough for Yes
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else {
+								response = "No to both";
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+								if (temp>24 && temp <50){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','straight.png')
+									.show();
+								} else if (temp < 10){
+									$('#slider').val(10) //No certainty should be exactly 0% or close
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} //end if
+							} //end if
+						} else if(combpoint==combpointtemp) {
+							if (combpoint>0){
+								response = "Yes to either";
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+								if (temp>74 && temp <91){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else if (temp > 91){
+									$('#slider').val(90) //No certainty should be exactly 100% or close
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','smile.png')
+									.show();
+								}
+							} else if (combpoint == 0){
+								response = "No to both";
+								$('#slider').val(49) //50% shouldn't be good enough for Yes
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else {
+								response = "No to both";
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+								if (temp>24 && temp <50){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','straight.png')
+									.show();
+								} else if (temp < 10){
+									$('#slider').val(10) //No certainty should be exactly 0% or close
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} //end if
+							} //end if
+						} else { //combpoint<combpointtemp
+							if (combpoint>0){
+								combpoint = combpointtemp  //to simplify calculation below
+								response = "Yes to "+ obj2;
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+								if (temp>74 && temp <91){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else if (temp > 91){
+									$('#slider').val(90) //No certainty should be exactly 100% or close
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','smile.png')
+									.show();
+								}
+							} else if (combpoint == 0){
+								response = "No to both";
+								$('#slider').val(49) //50% shouldn't be good enough for Yes
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else {
+								response = "No to both";
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+								if (temp>24 && temp <50){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','straight.png')
+									.show();
+								} else if (temp < 10){
+									$('#slider').val(10) //No certainty should be exactly 0% or close
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} //end if
+							} //end if
+						}
+				}
+				} else if (objmutual3rdflag == 0 && objmutual4thflag == 0){
+					response = "No - "+ obj2 +" and "+ obj3 +" unchecked";
+					$('#slider').val(49)
+					.trigger('change');
+					$('#smiley').attr('src','straight.png')
+					.show();
+				}
+				
+				} else { //preposition but no compare 'or' situation
+				for(i=0; i<subjpointarray.length; ++i){
+					chbx = '#subcheckbox_'+ i;
+					if ($(chbx).attr('checked')){
+						if ($(chbx).val() == 2){
+							response = "Yes";
+							combpoint = combpoint + 1;
+						} else {
+							combpoint = combpoint + 1;
+						}
+					} else {
+						if ($(chbx).val() == 0){
+							response = "No";
+							combpoint = combpoint - 1;
+						} else {
+							combpoint = combpoint - 1;
+						}
+					}
+				}
+				if (!mutflag){	//check for mutually exclusive flag
+					for(i=0; i<objpointarray.length; ++i){
+						chbx = '#objcheckbox_'+ i;
+						if ($(chbx).attr('checked')){
+							if ($(chbx).val() == 2){
+								if (response == "No"){
+									combpoint = combpoint + 1;
+								} else {
+									response = "Yes";
+									combpoint = combpoint + 1;
+								}
+							} else {
+								combpoint = combpoint + 1;
+							}
+						} else {
+							if ($(chbx).val() == 0){
+								response = "No";
+								combpoint = combpoint - 1;
+							} else {
+								combpoint = combpoint - 1;
+							}
+						}
+					}
+				} else {
+					for(i=0; i<objpointarray.length; ++i){
+						chbx = '#objcheckbox_'+ i;
+						if ($(chbx).attr('checked')){
+							combpoint = combpoint + 1;
+							objmutual = objmutual + 1;
+						}
+					}
+				}
+				for(i=0; i<objpointarray2.length; ++i){
+					chbx = '#objcheckbox2_'+ i;
+					if ($(chbx).attr('checked')){
+						combpoint = combpoint + 1;
+						objmutual3rdflag = objmutual3rdflag + 1;
+					}
+				}
+				if (objmutual3rdflag>0){
+				if (response == "Yes"){
+					if (combpoint>0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //because it's a compulsory Yes, give minimal value
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					}
+				} else if (response == "No"){
+					if (combpoint<0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+						if (temp>24 && temp <50){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (temp < 10){
+							$('#slider').val(10) //No certainty should be exactly 0% or close
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(35)
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					}
+				} else {
+					if (mutflag && objmutual == 0){	//check for mutually exclusive flag and if any object checked
+						response = 'No - '+ obj + " unselected";
+						$('#slider').val(49)
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					} else {
+						if (combpoint>0){
+							response = "Yes";
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else if (combpoint == 0){
+							response = "No";
+							$('#slider').val(49) //50% shouldn't be good enough for Yes
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else {
+							response = "No";
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
+							if (temp>24 && temp <50){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else if (temp < 10){
+								$('#slider').val(10) //No certainty should be exactly 0% or close
+								.trigger('change');
+								$('#smiley').attr('src','frown.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','frown.png')
+								.show();
+							} //end if
+						} //end if
+					} //end if mutflag
+				}	
+				} else {
+					response = "No - "+ obj2 +" unchecked";
+					$('#slider').val(49)
+					.trigger('change');
+					$('#smiley').attr('src','straight.png')
+					.show();
+				}
+
+				} //end if
+				} //end if or_b4_prep_flag
+			} else if(or_b4_prep_flag){
+				subobjobj2();
+				for(i=0; i<objpointarray3.length; ++i){
+					chbx = '#objcheckbox3_'+ i;
+					if ($(chbx).attr('checked')){
+						countobj3 = countobj3 + 1;
+					}
+				}
+				if (countobj3 == 0){
+					response = response + ' '+ obj3 +' unselected';
+				}
+				
+			} else if(subjpointarray.length>0 && objpointarray.length>0 && objpointarray2.length>0){
+				subobjobj2();
+				
+			} else if(subjpointarray.length>0 && objpointarray.length>0){
+				for(i=0; i<subjpointarray.length; ++i){
+					chbx = '#subcheckbox_'+ i;
+					if ($(chbx).attr('checked')){
+						if ($(chbx).val() == 2){
+							response = "Yes";
+							combpoint = combpoint + 1;
+						} else {
+							combpoint = combpoint + 1;
+						}
+					} else {
+						if ($(chbx).val() == 0){
+							response = "No";
+							combpoint = combpoint - 1;
+						} else {
+							combpoint = combpoint - 1;
+						}
+					}
+				}
+				if (!mutflag){	//check for mutually exclusive flag
+					for(i=0; i<objpointarray.length; ++i){
+						chbx = '#objcheckbox_'+ i;
+						if ($(chbx).attr('checked')){
+							if ($(chbx).val() == 2){
+								if (response == "No"){
+									combpoint = combpoint + 1;
+								} else {
+									response = "Yes";
+									combpoint = combpoint + 1;
+								}
+							} else {
+								combpoint = combpoint + 1;
+							}
+						} else {
+							if ($(chbx).val() == 0){
+								response = "No";
+								combpoint = combpoint - 1;
+							} else {
+								combpoint = combpoint - 1;
+							}
+						}
+					}
+				} else {
+					for(i=0; i<objpointarray.length; ++i){
+						chbx = '#objcheckbox_'+ i;
+						if ($(chbx).attr('checked')){
+							combpoint = combpoint + 1;
+							objmutual = objmutual + 1;
+						}
+					}
+				}
+				if (response == "Yes"){
+					if (combpoint>0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //because it's a compulsory Yes, give minimal value
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					}
+				} else if (response == "No"){
+					if (combpoint<0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+						if (temp>24 && temp <50){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (temp < 10){
+							$('#slider').val(10) //No certainty should be exactly 0% or close
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(35)
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					}
+				} else {
+					if (mutflag && objmutual == 0){	//check for mutually exclusive flag and if any object checked
+						response = 'No - '+ obj + " unselected";
+						$('#slider').val(49)
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					} else {
+						if (combpoint>0){
+							response = "Yes";
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else if (combpoint == 0){
+							response = "No";
+							$('#slider').val(49) //50% shouldn't be good enough for Yes
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else {
+							response = "No";
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+							if (temp>24 && temp <50){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else if (temp < 10){
+								$('#slider').val(10) //No certainty should be exactly 0% or close
+								.trigger('change');
+								$('#smiley').attr('src','frown.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','frown.png')
+								.show();
+							} //end if
+						} //end if
+					} //end if mutflag
+				}	
+			} else if(subjpointarray.length>0){
+				for(i=0; i<subjpointarray.length; ++i){
+					chbx = '#subcheckbox_'+ i;
+					if ($(chbx).attr('checked')){
+						//check if it's a 2 for Yes whatever the case
+						if ($(chbx).val() == 2){
+							response = "Yes";
+							subjpoint = subjpoint + 1;
+						} else {
+							subjpoint = subjpoint + 1;
+						}
+					} else {
+						//check if it's a fatal value of 0
+						if ($(chbx).val() == 0){
+							response = "No";
+							subjpoint = subjpoint - 1;
+						} else {
+							subjpoint = subjpoint - 1;
+						}
+					}
+				}
+				if (response == "Yes"){
+					if (subjpoint>0){
+						temp = 50 + ((subjpoint/subjpointarray.length)*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //because it's a compulsory Yes, give minimal value
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					}
+				} else if (response == "No"){
+					if (subjpoint<0){
+						temp = 50 + ((subjpoint/subjpointarray.length)*50);
+						if (temp>24 && temp <50){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (temp < 10){
+							$('#slider').val(10) //No certainty should be exactly 0% or close
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(35)
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					}
+				} else {
+					if (subjpoint>0){
+						response = "Yes";
+						temp = 50 + ((subjpoint/subjpointarray.length)*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else if (subjpoint == 0){
+						response = "No";
+						$('#slider').val(49) //50% shouldn't be good enough for Yes
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					} else {
+						temp = 50 + ((subjpoint/subjpointarray.length)*50);
+						response = "No";
+						if (temp>24 && temp <50){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (temp < 10){
+							$('#slider').val(10) //No certainty should be exactly 0% or close
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						}
+					}
+				}
+			}
+			$('#says').append(' <b>'+ response +'</b>');
+			var logger='';
+			$.getJSON('http://api.wipmania.com/jsonp?callback=?', function (data) { 
+				logger = data.address.country;
+			});
+			logger = logger +' Question:'+ $('#textinput').val() +' Response:'+ response +' Value:'+ $('#slider').val();
+			var term = {button:logger}; //{button:e};
+			$.ajax({
+				url:'http://adviseme.efathaonline.net/trail.php',
+		 		type:'POST',
+		   	    data:term,
+	 			dataType:'json',
+			 	error:function(jqXHR,text_status,strError){
+					alert("Error: Connection");
+				},
+			 	timeout:60000,
+			 	success:function(data){
+				}
+			});
+			$('#adviseme').attr('disabled',false);
+		} else {
+			$('#notadvice').append('<b>Sorry, click the Advise Me button first.</b>');
+			$('#imgoops').show();
+		}// end if
+    }); // end click
+	
+	$('#clearpage').click(function(e) {
+		location.reload();
+    }); //end click
+	
+	$('#sendcmt').click(function(e) {
+		var messag = $('#textinput2').val() +'\n'+ $('#textarea').val();
+		var term = {button:messag}; //{button:e};
+		$.ajax({
+			url:'http://adviseme.efathaonline.net/snd.php',
+	 		type:'POST',
+	   	    data:term,
+ 			dataType:'json',
+		 	error:function(jqXHR,text_status,strError){
+				alert("Error: Connection");
+			},
+		 	timeout:60000,
+		 	success:function(data){
+			}
+		});
+		$('#textinput2').val('');
+		$('#textarea').val('');
+	});
+	
+	function subobjobj2(){
+				for(i=0; i<subjpointarray.length; ++i){
+					chbx = '#subcheckbox_'+ i;
+					if ($(chbx).attr('checked')){
+						if ($(chbx).val() == 2){
+							response = "Yes";
+							combpoint = combpoint + 1;
+						} else {
+							combpoint = combpoint + 1;
+						}
+					} else {
+						if ($(chbx).val() == 0){
+							response = "No";
+							combpoint = combpoint - 1;
+						} else {
+							combpoint = combpoint - 1;
+						}
+					}
+				}
+				responsetemp = response;
+				combpointtemp = combpoint;
+				if (!mutflag){ // check for mutual exclusive case
+					for(i=0; i<objpointarray.length; ++i){
+						chbx = '#objcheckbox_'+ i;
+						if ($(chbx).attr('checked')){
+							if ($(chbx).val() == 2){
+								if (response == "No"){
+									combpoint = combpoint + 1;
+								} else {
+									response = "Yes";
+									combpoint = combpoint + 1;
+								}
+							} else {
+								combpoint = combpoint + 1;
+							}
+						} else {
+							if ($(chbx).val() == 0){
+								response = "No";
+								combpoint = combpoint - 1;
+							} else {
+								combpoint = combpoint - 1;
+							}
+						}
+					}
+				} else {
+					for(i=0; i<objpointarray.length; ++i){
+						chbx = '#objcheckbox_'+ i;
+						if ($(chbx).attr('checked')){
+							combpoint = combpoint + 1;
+							objmutual = objmutual + 1;
+						}
+					}
+				}
+				if (!mutflag){
+					for(i=0; i<objpointarray2.length; ++i){
+						chbx = '#objcheckbox2_'+ i;
+						if ($(chbx).attr('checked')){
+							if ($(chbx).val() == 2){
+								if (responsetemp == "No"){
+									combpointtemp = combpointtemp + 1;
+								} else {
+									responsetemp = "Yes";
+									combpointtemp = combpointtemp + 1;
+								}
+							} else {
+								combpointtemp = combpointtemp + 1;
+							}
+						} else {
+							if ($(chbx).val() == 0){
+								responsetemp = "No";
+								combpointtemp = combpointtemp - 1;
+							} else {
+								combpointtemp = combpointtemp - 1;
+							}
+						}
+					}
+				} else {
+					for(i=0; i<objpointarray2.length; ++i){
+						chbx = '#objcheckbox2_'+ i;
+						if ($(chbx).attr('checked')){
+							combpointtemp = combpointtemp + 1;
+							objmutual2 = objmutual2 + 1;
+						}
+					}
+				}
+				if (response == "No" && responsetemp == "No"){
+					response = "No to both";
+					if(combpoint>combpointtemp){
+							$('#slider').val(49) //forced No
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+					} else if(combpoint==combpointtemp) {
+							$('#slider').val(49) //forced No
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+					} else {
+						if (combpoint>0){
+							$('#slider').val(49) //forced No
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (combpoint == 0){
+							$('#slider').val(49) //50% shouldn't be good enough for Yes
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else {
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+							if (temp>24 && temp <50){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else if (temp < 10){
+								$('#slider').val(10) //No certainty should be exactly 0% or close
+								.trigger('change');
+								$('#smiley').attr('src','frown.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','frown.png')
+								.show();
+							} //end if
+						} //end if
+					}
+				} else if (response == "No" && responsetemp == "Yes"){
+					response = "Yes to "+ obj2;
+					combpoint = combpointtemp;
+					if (combpoint>0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //Least Yes since it's a compulsory Yes
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					}
+				} else if (response == "Yes" && responsetemp == "No"){
+					response = "Yes to "+ obj;
+					if (combpoint>0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //Least Yes since it's a compulsory Yes
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					}
+				} else if (response == "Yes" && responsetemp =="Yes"){
+					if(combpoint>combpointtemp){
+						if (combpoint>0){
+							response = "Yes to "+ obj;
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							response = "Yes to "+ obj;
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					} else if(combpoint==combpointtemp) {
+						if (combpoint>0){
+							response = "Yes to either";
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							response = "Yes to either";
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					} else { //combpoint < combpointtemp
+						if (combpoint>0){
+							combpoint = combpointtemp  //to simplify calculation below
+							response = "Yes to "+ obj2;
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							response = "Yes to "+ obj;
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					}
+				} else if(response == "Yes" || responsetemp =="Yes"){
+					if (combpoint>combpointtemp){
+						response = "Yes to "+ obj;
+						if (combpoint>0){
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					} else {
+						response = "Yes to "+ obj2;
+						combpoint = combpointtemp;
+						if (combpoint>0){
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+					}
+				} else if (response == "" && responsetemp =="Yes"){
+						response = "Yes to "+ obj2;
+						combpoint = combpointtemp;
+						if (combpoint>0){
+							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length))*50);
+							if (temp>74 && temp <91){
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else if (temp > 91){
+								$('#slider').val(90) //No certainty should be exactly 100% or close
+								.trigger('change');
+								$('#smiley').attr('src','bigsmile.png')
+								.show();
+							} else {
+								$('#slider').val(temp)
+								.trigger('change');
+								$('#smiley').attr('src','smile.png')
+								.show();
+							}
+						} else {
+							$('#slider').val(51) //least Yes value because of the compulsory Yes
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						} //end if
+				} else if (response == "Yes" && responsetemp ==""){
+					response = "Yes to "+ obj;
+					if (combpoint>0){
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else {
+						$('#slider').val(51) //least Yes value because of the compulsory Yes
+						.trigger('change');
+						$('#smiley').attr('src','smile.png')
+						.show();
+					} //end if
+				} else if (response == "No" && responsetemp ==""){
+					combpoint = combpointtemp  //to simplify calculation below
+					if (combpoint>0){
+						response = "Yes to "+ obj2;
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else if (combpoint == 0){
+						response = "No to both";
+						$('#slider').val(49) //50% shouldn't be good enough for Yes
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					} else {
+						response = "No to both";
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+						if (temp>24 && temp <50){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (temp < 10){
+							$('#slider').val(10) //No certainty should be exactly 0% or close
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} //end if
+					} //end if
+				} else if (response == "" && responsetemp =="No"){
+					if (combpoint>0){
+						response = "Yes to "+ obj;
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+						if (temp>74 && temp <91){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else if (temp > 91){
+							$('#slider').val(90) //No certainty should be exactly 100% or close
+							.trigger('change');
+							$('#smiley').attr('src','bigsmile.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','smile.png')
+							.show();
+						}
+					} else if (combpoint == 0){
+						response = "No to both";
+						$('#slider').val(49) //50% shouldn't be good enough for Yes
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					} else {
+						response = "No to both";
+						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+						if (temp>24 && temp <50){
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','straight.png')
+							.show();
+						} else if (temp < 10){
+							$('#slider').val(10) //No certainty should be exactly 0% or close
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} else {
+							$('#slider').val(temp)
+							.trigger('change');
+							$('#smiley').attr('src','frown.png')
+							.show();
+						} //end if
+					} //end if
+				} else {
+					if (mutflag && objmutual == 0 && objmutual2 == 0){	//check for mutually exclusive flag and if any object checked
+						response = 'No - '+ obj +' & '+ obj2 +' unselected';
+						$('#slider').val(49)
+						.trigger('change');
+						$('#smiley').attr('src','straight.png')
+						.show();
+					} else {
+						if(combpoint>combpointtemp){
+							if (combpoint>0){
+								response = "Yes to "+ obj;
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+								if (temp>74 && temp <91){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else if (temp > 91){
+									$('#slider').val(90) //No certainty should be exactly 100% or close
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','smile.png')
+									.show();
+								}
+							} else if (combpoint == 0){
+								response = "No to both";
+								$('#slider').val(49) //50% shouldn't be good enough for Yes
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else {
+								response = "No to both";
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+								if (temp>24 && temp <50){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','straight.png')
+									.show();
+								} else if (temp < 10){
+									$('#slider').val(10) //No certainty should be exactly 0% or close
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} //end if
+							} //end if
+						} else if(combpoint==combpointtemp) {
+							if (combpoint>0){
+								response = "Yes to either";
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+								if (temp>74 && temp <91){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else if (temp > 91){
+									$('#slider').val(90) //No certainty should be exactly 100% or close
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','smile.png')
+									.show();
+								}
+							} else if (combpoint == 0){
+								response = "No to both";
+								$('#slider').val(49) //50% shouldn't be good enough for Yes
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else {
+								response = "No to both";
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+								if (temp>24 && temp <50){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','straight.png')
+									.show();
+								} else if (temp < 10){
+									$('#slider').val(10) //No certainty should be exactly 0% or close
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} //end if
+							} //end if
+						} else { //combpoint<combpointtemp
+							if (combpoint>0){
+								combpoint = combpointtemp  //to simplify calculation below
+								response = "Yes to "+ obj2;
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+								if (temp>74 && temp <91){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else if (temp > 91){
+									$('#slider').val(90) //No certainty should be exactly 100% or close
+									.trigger('change');
+									$('#smiley').attr('src','bigsmile.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','smile.png')
+									.show();
+								}
+							} else if (combpoint == 0){
+								response = "No to both";
+								$('#slider').val(49) //50% shouldn't be good enough for Yes
+								.trigger('change');
+								$('#smiley').attr('src','straight.png')
+								.show();
+							} else {
+								response = "No to both";
+								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length))*50);
+								if (temp>24 && temp <50){
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','straight.png')
+									.show();
+								} else if (temp < 10){
+									$('#slider').val(10) //No certainty should be exactly 0% or close
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} else {
+									$('#slider').val(temp)
+									.trigger('change');
+									$('#smiley').attr('src','frown.png')
+									.show();
+								} //end if
+							} //end if
+						}
+					} //end if mutflag
+				}
+	} //end function subobjobj2
+	
+	function prepoloop(quest,s){
+							if (quest.search(' to ')>s){
+								prep_locate = quest.indexOf(' to ',s);
+								prepoval = ' to ';
+							} else if (quest.search(' for ')>s) {
+								prep_locate = quest.indexOf(' for ',s);
+								prepoval = ' for ';
+							} else if (quest.search(' from ')>s) {
+								prep_locate = quest.indexOf(' from ',s);
+								prepoval = ' from ';
+							} else if (quest.search(' in ')>s) {
+								prep_locate = quest.indexOf(' in ',s);
+								prepoval = ' in ';
+							} else if (quest.search(' about ')>s) {
+								prep_locate = quest.indexOf(' about ',s);
+								prepoval = ' about ';
+							} else if (quest.search(' aboard ')>s) {
+								prep_locate = quest.indexOf(' aboard ',s);
+								prepoval = ' aboard ';
+							} else if (quest.search(' above ')>s) {
+								prep_locate = quest.indexOf(' above ',s);
+								prepoval = ' above ';
+							} else if (quest.search(' absent ')>s) {
+								prep_locate = quest.indexOf(' absent ',s);
+								prepoval = ' absent ';
+							} else if (quest.search(' across ')>s) {
+								prep_locate = quest.indexOf(' across ',s);
+								prepoval = ' across ';
+							} else if (quest.search(' afore ')>s){
+								prep_locate = quest.indexOf(' afore ',s);
+								prepoval = ' afore ';
+							} else if (quest.search(' after ')>s) {
+								prep_locate = quest.indexOf(' after ',s);
+								prepoval = ' after ';
+							} else if (quest.search(' against')>s) {
+								prep_locate = quest.indexOf(' against ',s);
+								prepoval = ' against ';
+							} else if (quest.search(' along ')>s){
+								prep_locate = quest.indexOf(' along ',s);
+								prepoval = ' along ';
+							} else if (quest.search(' alongside ')>s){
+								prep_locate = quest.indexOf(' alongside ',s);
+								prepoval = ' alongside ';
+							} else if (quest.search(' amid ')>s){
+								prep_locate = quest.indexOf(' amid ',s);
+								prepoval = ' amid ';
+							} else if (quest.search(' amidst ')>s){
+								prep_locate = quest.indexOf(' amidst ',s);
+								prepoval = ' amidst ';
+							} else if (quest.search(' among ')>s){
+								prep_locate = quest.indexOf(' among ',s);
+								prepoval = ' among ';
+							} else if (quest.search(' amongst')>s){
+								prep_locate = quest.indexOf(' amongst ',s);
+								prepoval = ' amongst ';
+							} else if (quest.search(' around ')>s){
+								prep_locate = quest.indexOf(' around ',s);
+								prepoval = ' around ';
+							} else if (quest.search(' as ')>s){
+								prep_locate = quest.indexOf(' as ',s);
+								prepoval = ' as ';
+							} else if (quest.search(' aside ')>s){
+								prep_locate = quest.indexOf(' aside ',s);
+								prepoval = ' aside ';
+							} else if (quest.search(' at ')>s){
+								prep_locate = quest.indexOf(' at ',s);
+								prepoval = ' at ';
+							} else if (quest.search(' atop ')>s){
+								prep_locate = quest.indexOf(' atop ',s);
+								prepoval = ' atop ';
+							} else if (quest.search(' before ')>s){
+								prep_locate = quest.indexOf(' before ',s);
+								prepoval = ' before ';
+							} else if (quest.search(' behind ')>s){
+								prep_locate = quest.indexOf(' behind ',s);
+								prepoval = ' behind ';
+							} else if (quest.search(' below ')>s){
+								prep_locate = quest.indexOf(' below ',s);
+								prepoval = ' below ';
+							} else if (quest.search(' beneath ')>s){
+								prep_locate = quest.indexOf(' beneath ',s);
+								prepoval = ' beneath ';
+							} else if (quest.search(' beside ')>s){
+								prep_locate = quest.indexOf(' beside ',s);
+								prepoval = ' beside ';
+							} else if (quest.search(' besides ')>s){
+								prep_locate = quest.indexOf(' besides ',s);
+								prepoval = ' besides ';
+							} else if (quest.search(' between ')>s){
+								prep_locate = quest.indexOf(' between ',s);
+								prepoval = ' between ';
+							} else if (quest.search(' beyond ')>s){
+								prep_locate = quest.indexOf(' beyond ',s);
+								prepoval = ' beyond ';
+							} else if (quest.search(' but ')>s){
+								prep_locate = quest.indexOf(' but ',s);
+								prepoval = ' but ';
+							} else if (quest.search(' by ')>s){
+								prep_locate = quest.indexOf(' by ',s);
+								prepoval = ' by ';
+							} else if (quest.search(' concerning ')>s){
+								prep_locate = quest.indexOf(' concerning ',s);
+								prepoval = ' concerning ';
+							} else if (quest.search(' despite ')>s){
+								prep_locate = quest.indexOf(' despite ',s);
+								prepoval = ' despite ';
+							} else if (quest.search(' down ')>s){
+								prep_locate = quest.indexOf(' down ',s);
+								prepoval = ' down ';
+							} else if (quest.search(' during ')>s){
+								prep_locate = quest.indexOf(' during ',s);
+								prepoval = ' during ';
+							} else if (quest.search(' except ')>s){
+								prep_locate = quest.indexOf(' except ',s);
+								prepoval = ' except ';
+							} else if (quest.search(' excluding ')>s){
+								prep_locate = quest.indexOf(' excluding ',s);
+								prepoval = ' excluding ';
+							} else if (quest.search(' failing ')>s){
+								prep_locate = quest.indexOf(' failing ',s);
+								prepoval = ' failing ';
+							} else if (quest.search(' following ')>s){
+								prep_locate = quest.indexOf(' following ',s);
+								prepoval = ' following ';
+							} else if (quest.search(' given ')>s){
+								prep_locate = quest.indexOf(' given ',s);
+								prepoval = ' given ';
+							} else if (quest.search(' including ')>s){
+								prep_locate = quest.indexOf(' including ',s);
+								prepoval = ' including ';
+							} else if (quest.search(' inside ')>s){
+								prep_locate = quest.indexOf(' inside ',s);
+								prepoval = ' inside ';
+							} else if (quest.search(' into ')>s){
+								prep_locate = quest.indexOf(' into ',s);
+								prepoval = ' into ';
+							} else if (quest.search(' like ')>s){
+								prep_locate = quest.indexOf(' like ',s);
+								prepoval = ' like ';
+							} else if (quest.search(' minus ')>s){
+								prep_locate = quest.indexOf(' minus ',s);
+								prepoval = ' minus ';
+							} else if (quest.search(' near ')>s){
+								prep_locate = quest.indexOf(' near ',s);
+								prepoval = ' near ';
+							} else if (quest.search(' next ')>s){
+								prep_locate = quest.indexOf(' next ',s);
+								prepoval = ' next ';
+							} else if (quest.search(' notwithstanding ')>s){
+								prep_locate = quest.indexOf(' notwithstanding ',s);
+								prepoval = ' notwithstanding ';
+							} else if (quest.search(' off ')>s){
+								prep_locate = quest.indexOf(' off ',s);
+								prepoval = ' off ';
+							} else if (quest.search(' on ')>s){
+								prep_locate = quest.indexOf(' on ',s);
+								prepoval = ' on ';
+							} else if (quest.search(' onto ')>s){
+								prep_locate = quest.indexOf(' onto ',s);
+								prepoval = ' onto ';
+							} else if (quest.search(' opposite ')>s){
+								prep_locate = quest.indexOf(' opposite ',s);
+								prepoval = ' opposite ';
+							} else if (quest.search(' out ')>s){
+								prep_locate = quest.indexOf(' out ',s);
+								prepoval = ' out ';
+							} else if (quest.search(' outside ')>s){
+								prep_locate = quest.indexOf(' outside ',s);
+								prepoval = ' outside ';
+							} else if (quest.search(' over ')>s){
+								prep_locate = quest.indexOf(' over ',s);
+								prepoval = ' over ';
+							} else if (quest.search(' past ')>s){
+								prep_locate = quest.indexOf(' past ',s);
+								prepoval = ' past ';
+							} else if (quest.search(' per ')>s){
+								prep_locate = quest.indexOf(' per ',s);
+								prepoval = ' per ';
+							} else if (quest.search(' plus ')>s){
+								prep_locate = quest.indexOf(' plus ',s);
+								prepoval = ' plus ';
+							} else if (quest.search(' pro ')>s){
+								prep_locate = quest.indexOf(' pro ',s);
+								prepoval = ' pro ';
+							} else if (quest.search(' regarding ')>s){
+								prep_locate = quest.indexOf(' regarding ',s);
+								prepoval = ' regarding ';
+							} else if (quest.search(' round ')>s){
+								prep_locate = quest.indexOf(' round ',s);
+								prepoval = ' round ';
+							} else if (quest.search(' save ')>s){
+								prep_locate = quest.indexOf(' save ',s);
+								prepoval = ' save ';
+							} else if (quest.search(' since ')>s){
+								prep_locate = quest.indexOf(' since ',s);
+								prepoval = ' since ';
+							} else if (quest.search(' than ')>s){
+								prep_locate = quest.indexOf(' than ',s);
+								prepoval = ' than ';
+							} else if (quest.search(' through ')>s){
+								prep_locate = quest.indexOf(' through ',s);
+								prepoval = ' through ';
+							} else if (quest.search(' throughout ')>s){
+								prep_locate = quest.indexOf(' throughout ',s);
+								prepoval = ' throughout ';
+							} else if (quest.search(' till ')>s){
+								prep_locate = quest.indexOf(' till ',s);
+								prepoval = ' till ';
+							} else if (quest.search(' toward ')>s){
+								prep_locate = quest.indexOf(' toward ',s);
+								prepoval = ' toward ';
+							} else if (quest.search(' towards ')>s){
+								prep_locate = quest.indexOf(' towards ',s);
+								prepoval = ' towards ';
+							} else if (quest.search(' under ')>s){
+								prep_locate = quest.indexOf(' under ',s);
+								prepoval = ' under ';
+							} else if (quest.search(' underneath ')>s){
+								prep_locate = quest.indexOf(' underneath ',s);
+								prepoval = ' underneath ';
+							} else if (quest.search(' unlike ')>s){
+								prep_locate = quest.indexOf(' unlike ',s);
+								prepoval = ' unlike ';
+							} else if (quest.search(' until ')>s){
+								prep_locate = quest.indexOf(' until ',s);
+								prepoval = ' until ';
+							} else if (quest.search(' unto ')>s){
+								prep_locate = quest.indexOf(' unto ',s);
+								prepoval = ' unto ';
+							} else if (quest.search(' up ')>s){
+								prep_locate = quest.indexOf(' up ',s);
+								prepoval = ' up ';
+							} else if (quest.search(' upon ')>s){
+								prep_locate = quest.indexOf(' upon ',s);
+								prepoval = ' upon ';
+							} else if (quest.search(' versus ')>s){
+								prep_locate = quest.indexOf(' versus ',s);
+								prepoval = ' versus ';
+							} else if (quest.search(' via ')>s){
+								prep_locate = quest.indexOf(' via ',s);
+								prepoval = ' via ';
+							} else if (quest.search(' vice ')>s){
+								prep_locate = quest.indexOf(' vice ',s);
+								prepoval = ' vice ';
+							} else if (quest.search(' vis-a-vis ')>s){
+								prep_locate = quest.indexOf(' vis-a-vis ',s);
+								prepoval = ' vis-a-vis ';
+							} else if (quest.search(' with ')>s){
+								prep_locate = quest.indexOf(' with ',s);
+								prepoval = ' with ';
+							} else if (quest.search(' within ')>s){
+								prep_locate = quest.indexOf(' within ',s);
+								prepoval = ' within ';
+							} else if (quest.search(' without ')>s){
+								prep_locate = quest.indexOf(' without ',s);
+								prepoval = ' without ';
+							} else if (quest.search(' if ')>s){
+								prep_locate = quest.indexOf(' if ',s);
+								prepoval = ' if ';
+							}	
+	}
+		
+});
+</script>
+<script language="javascript">
+document.onmousedown=disableclick;
+function disableclick(event)
+{
+  if(event.button==2)
+   {
+     return false;    
+   }
+}
+</script>
+</body>
+</html>
