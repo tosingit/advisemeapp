@@ -735,7 +735,7 @@ $(document).ready(function(e) {
 				for(i=0; i<objpointarray3.length; ++i){
 					chbx = '#objcheckbox3_'+ i;
 					if ($(chbx).attr('checked')){
-						combpoint = combpointtemp + 1;
+						combpointtemp = combpointtemp + 1;
 						objmutual4thflag = objmutual4thflag + 1;
 					}
 				}
@@ -784,7 +784,7 @@ $(document).ready(function(e) {
 						} //end if
 					}
 				} else if (response == "No" && responsetemp == "Yes"){
-					response = "Yes to "+ obj2;
+					response = "Yes to "+ obj3;
 					combpoint = combpointtemp;
 					if (combpoint>0){
 						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length + objpointarray2.length))*50);
@@ -811,7 +811,7 @@ $(document).ready(function(e) {
 						.show();
 					}
 				} else if (response == "Yes" && responsetemp == "No"){
-					response = "Yes to "+ obj;
+					response = "Yes to "+ obj2;
 					if (combpoint>0){
 						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 						if (temp>74 && temp <91){
@@ -839,7 +839,7 @@ $(document).ready(function(e) {
 				} else if (response == "Yes" && responsetemp =="Yes"){
 					if(combpoint>combpointtemp){
 						if (combpoint>0){
-							response = "Yes to "+ obj;
+							response = "Yes to "+ obj2;
 							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 							if (temp>74 && temp <91){
 								$('#slider').val(temp)
@@ -858,7 +858,7 @@ $(document).ready(function(e) {
 								.show();
 							}
 						} else {
-							response = "Yes to "+ obj;
+							response = "Yes to "+ obj2;
 							$('#slider').val(51) //least Yes value because of the compulsory Yes
 							.trigger('change');
 							$('#smiley').attr('src','smile.png')
@@ -894,7 +894,7 @@ $(document).ready(function(e) {
 					} else { //combpoint < combpointtemp
 						if (combpoint>0){
 							combpoint = combpointtemp  //to simplify calculation below
-							response = "Yes to "+ obj2;
+							response = "Yes to "+ obj3;
 							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 							if (temp>74 && temp <91){
 								$('#slider').val(temp)
@@ -922,7 +922,7 @@ $(document).ready(function(e) {
 					}
 				} else if(response == "Yes" || responsetemp =="Yes"){
 					if (combpoint>combpointtemp){
-						response = "Yes to "+ obj;
+						response = "Yes to "+ obj2;
 						if (combpoint>0){
 							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 							if (temp>74 && temp <91){
@@ -948,7 +948,7 @@ $(document).ready(function(e) {
 							.show();
 						} //end if
 					} else {
-						response = "Yes to "+ obj2;
+						response = "Yes to "+ obj3;
 						combpoint = combpointtemp;
 						if (combpoint>0){
 							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length + objpointarray2.length))*50);
@@ -976,7 +976,7 @@ $(document).ready(function(e) {
 						} //end if
 					}
 				} else if (response == "" && responsetemp =="Yes"){
-						response = "Yes to "+ obj2;
+						response = "Yes to "+ obj3;
 						combpoint = combpointtemp;
 						if (combpoint>0){
 							temp = 50 + ((combpoint/(subjpointarray.length + objpointarray2.length + objpointarray2.length))*50);
@@ -1003,7 +1003,7 @@ $(document).ready(function(e) {
 							.show();
 						} //end if
 				} else if (response == "Yes" && responsetemp ==""){
-					response = "Yes to "+ obj;
+					response = "Yes to "+ obj2;
 					if (combpoint>0){
 						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 						if (temp>74 && temp <91){
@@ -1031,7 +1031,7 @@ $(document).ready(function(e) {
 				} else if (response == "No" && responsetemp ==""){
 					combpoint = combpointtemp  //to simplify calculation below
 					if (combpoint>0){
-						response = "Yes to "+ obj2;
+						response = "Yes to "+ obj3;
 						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 						if (temp>74 && temp <91){
 							$('#slider').val(temp)
@@ -1077,7 +1077,7 @@ $(document).ready(function(e) {
 					} //end if
 				} else if (response == "" && responsetemp =="No"){
 					if (combpoint>0){
-						response = "Yes to "+ obj;
+						response = "Yes to "+ obj2;
 						temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 						if (temp>74 && temp <91){
 							$('#slider').val(temp)
@@ -1124,7 +1124,7 @@ $(document).ready(function(e) {
 				} else {
 						if(combpoint>combpointtemp){
 							if (combpoint>0){
-								response = "Yes to "+ obj;
+								response = "Yes to "+ obj2;
 								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 								if (temp>74 && temp <91){
 									$('#slider').val(temp)
@@ -1217,7 +1217,7 @@ $(document).ready(function(e) {
 						} else { //combpoint<combpointtemp
 							if (combpoint>0){
 								combpoint = combpointtemp  //to simplify calculation below
-								response = "Yes to "+ obj2;
+								response = "Yes to "+ obj3;
 								temp = 50 + ((combpoint/(subjpointarray.length + objpointarray.length + objpointarray2.length))*50);
 								if (temp>74 && temp <91){
 									$('#slider').val(temp)
